@@ -20,11 +20,6 @@ class Version extends Field
     protected $moduleVersion;
 
     /**
-     * @var string
-     */
-    protected $moduleName;
-
-    /**
      * @param Context $templateContext
      * @param ModuleVersion $moduleVersion
      * @param string $moduleName
@@ -33,11 +28,9 @@ class Version extends Field
     public function __construct(
         Context $templateContext,
         ModuleVersion $moduleVersion,
-        string $moduleName,
         array $data = []
     ) {
         $this->moduleVersion = $moduleVersion;
-        $this->moduleName = $moduleName;
         parent::__construct($templateContext, $data);
     }
 
@@ -48,7 +41,7 @@ class Version extends Field
     protected function _getElementHtml(AbstractElement $element)
     {
         return __(
-            '<label class="label"><span>' . $this->moduleVersion->getModuleVersion($this->moduleName) . '</span></label>'
+            '<label class="label"><span>' . $this->moduleVersion->getModuleVersion($this->getModuleName()) . '</span></label>'
         );
     }
 }
