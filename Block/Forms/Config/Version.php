@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace TradeCentric\Version\Block\Forms\Config;
 
 use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\Data\Form\Element\AbstractElement;
+use TradeCentric\Version\Api\ModuleHelperInterface;
 use TradeCentric\Version\Model\ModuleVersion;
 use Magento\Backend\Block\Template\Context;
 
@@ -15,22 +17,21 @@ use Magento\Backend\Block\Template\Context;
 class Version extends Field
 {
     /**
-     * @var ModuleVersion
+     * @var AbstractHelper
      */
-    protected $moduleVersion;
+    protected $helper;
 
     /**
      * @param Context $templateContext
-     * @param ModuleVersion $moduleVersion
-     * @param string $moduleName
+     * @param ModuleHelperInterface $helper
      * @param array $data
      */
     public function __construct(
         Context $templateContext,
-        ModuleVersion $moduleVersion,
+        ModuleHelperInterface $helper,
         array $data = []
     ) {
-        $this->moduleVersion = $moduleVersion;
+        $this->helper = $helper;
         parent::__construct($templateContext, $data);
     }
 
@@ -41,7 +42,7 @@ class Version extends Field
     protected function _getElementHtml(AbstractElement $element)
     {
         return __(
-            '<label class="label"><span>' . $this->moduleVersion->getModuleVersion($this->getModuleName()) . '</span></label>'
+            '<label class="label"><span>' . $this->helper->getModuleVersion() . '</span></label>'
         );
     }
 }
