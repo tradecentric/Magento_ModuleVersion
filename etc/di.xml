@@ -4,4 +4,10 @@
 
     <preference for="TradeCentric\Version\Api\ModuleHelperInterface" type="TradeCentric\Version\Helper\ModuleHelper"/>
 
+    <virtualType name="TradeCentric\Version\Block\Forms\Config\Version" type="TradeCentric\Version\Block\Forms\Config\Version">
+        <arguments>
+            <argument name="helper" xsi:type="object">TradeCentric\Version\Helper\ModuleHelper</argument>
+        </arguments>
+    </virtualType>
+
 </config>
