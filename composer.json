@@ -1,6 +1,6 @@
 {
     "name": "tradecentric/module-version",
-    "description": "N/A",
+    "description": "TradeCentric Version",
     "type": "magento2-module",
     "license": [
         "OSL-3.0",
@@ -26,4 +26,3 @@
         }
     }
 }
-
