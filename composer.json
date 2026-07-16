@@ -21,7 +21,7 @@
         "cs": "php -d auto_prepend_file=phpcs-bootstrap.php vendor/bin/phpcs --standard=phpcs.xml.dist",
         "cs:fixable": "php -d auto_prepend_file=phpcs-bootstrap.php vendor/bin/phpcbf --standard=phpcs.xml.dist"
     },
-    "version": "3.0.2",
+    "version": "3.0.3",
     "require": {
         "php": "~7.3.0||~7.4.0||^8.0",
         "ext-openssl": "*"
